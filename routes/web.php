@@ -17,6 +17,34 @@ Route::get('/', function () {
     $data = [
         'name' => 'Renato',
         'lastname' => 'Confuorto',
+        'links' => [
+            [
+              'url' => 'home',
+              'text' => 'Home'
+            ],
+            [
+              'url' => 'contact',
+              'text' => 'Contacts'
+            ]
+            
+          ]
     ];
     return view('home', $data);
 })->name('home');
+
+Route::get('/contact-us', function(){
+    $data = [
+        'links' => [
+            [
+                'url' => 'home',
+                'text' => 'Home'
+            ],
+            [
+                'url' => 'contact',
+                'text' => 'Contacts'
+                ]
+                
+                ]
+            ];
+    return view('contact_us', $data);
+})->name('contact');
